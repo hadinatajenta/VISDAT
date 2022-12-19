@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<canvas id="myChart"></canvas>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+  // Membuat data
+  const data = {
+    labels: ['Lampung Barat', 
+        'Tanggamus', 'Lampung Selatan', 'Lampung Timur', 'Lampung Tengah','Lampung Utara',
+        'Way Kanan','Tulang Bawang','Pesawaran','Pringsewu','Mesuji',
+        'Tulang Bawang Barat','Pesisir Barat','Bandar Lampung','Metro','Provinsi Lampung'],
+    datasets: [
+      {
+        label: 'Tahun 2019',
+        data: [1.66,
+              2.96,
+              4.68,
+              2.87,
+              2.61,
+              5.11,
+              3.59,
+              4.01,
+              4.41,
+              4.92,
+              3.61,
+              3.57,
+              3.25,
+              7.15,
+              5.12,
+              4.03],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Tahun 2020',
+        data: [2.13,
+              2.96,
+              5.19,
+              2.64,
+              4.22,
+              5.34,
+              3.56,
+              4.84,
+              4.64,
+              5.77,
+              3.71,
+              3.46,
+              3.41,
+              8.79,
+              5.40,
+              4.67],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Tahun 2021',
+        data: [2.83,
+              2.93,
+              5.27,
+              3.05,
+              4.31,
+              6.14,
+              3.36,
+              4.10,
+              4.19,
+              4.85,
+              3.42,
+              3.35,
+              3.08,
+              8.85,
+              5.00,
+              4.69],
+        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1
+      }
+    ]
+  };
+
+  // Menentukan element canvas
+  const ctx = document.getElementById('myChart').getContext('2d');
+
+  // Membuat chart dengan tipe bar chart
+  const chart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
